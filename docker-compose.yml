@@ -1,0 +1,18 @@
+version: '3'
+services:
+  cowsay:
+    build: ./cowsay
+    image: cowsay
+    ports:
+      - "3080:3080"
+    volumes:
+      - ./cowsay:/app
+    command: "node index.js"
+  fortune:
+    build: ./fortune
+    image: fortune
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./fortune:/app
+    command: "node index.js"
